@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F1F2"
+    tools:context=".Autentication.LogIn">
+
+    <RelativeLayout android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+
+        <RelativeLayout
+            android:id="@+id/group_65"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="73dp"
+            android:layout_centerHorizontal="true"
+            >
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="100dp"
+                android:layout_height="128.68dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="logo"
+                android:src="@drawable/logo" />
+
+            <TextView
+                android:id="@+id/selamat_datang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/logo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/fredoka_bold"
+                android:textSize="32sp"
+                android:textColor="#000000"
+                android:text="@string/selamat_datang_string" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout android:id="@+id/group_63"
+            android:layout_marginTop="41dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/group_65"
+
+            >
+
+            <EditText
+                android:id="@+id/password_input"
+                android:layout_width="312dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="60dp"
+                android:alpha="0.40000000596046"
+                android:background="@drawable/rectangle_3_shape"
+                android:fontFamily="@font/fredoka_regular"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColorHint="@color/black" />
+
+            <EditText
+                android:id="@+id/email_input"
+                android:alpha="0.40000000596046"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="312dp"
+                android:layout_height="50dp"
+                android:hint="Email"
+                android:fontFamily="@font/fredoka_regular"
+                android:textColorHint="@color/black"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/rectangle_3_shape"
+                />
+
+            <TextView
+                android:id="@+id/lupa_kata_sandi"
+                android:textSize="12sp"
+                android:textColor="#1195AD"
+                android:layout_marginLeft="218dp"
+                android:layout_marginTop="120dp"
+                android:layout_width="wrap_content"
+                android:layout_height="18.2dp"
+                android:fontFamily="@font/fredoka_medium"
+                android:text="@string/lupa_kata_sandi__string"
+                />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout android:id="@+id/belum_punya_akun"
+            android:layout_marginTop="760dp"
+            android:layout_marginStart="108dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView android:id="@+id/belum_punya_akun_"
+                android:textSize="12sp"
+                android:textColor="@color/_bg__group_65_ek1_color"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_width="119.2dp"
+                android:layout_height="18.2dp"
+                android:text="@string/belum_punya_akun__string"
+                />
+
+            <TextView android:id="@+id/daftar"
+                android:textSize="12sp"
+                android:textColor="@color/lupa_kata_sandi__color"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="0dp"
+                android:layout_width="47.2dp"
+                android:layout_height="18.2dp"
+                android:text="@string/daftar_string"
+                />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout android:id="@+id/group_64"
+            android:layout_marginTop="531dp"
+            android:layout_marginStart="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <RelativeLayout android:id="@+id/button_masuk"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View   android:id="@+id/rectangle_5"
+                    android:background="@drawable/rectangle_5_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="312dp"
+                    android:layout_height="41dp" />
+
+                <TextView android:id="@+id/masuk"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/_bg__login_color"
+                    android:layout_marginLeft="127dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    android:text="@string/masuk_string"
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout android:id="@+id/button_masuk_google"
+                android:layout_marginTop="86dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View   android:id="@+id/rectangle_5_ek1"
+                    android:background="@drawable/rectangle_5_ek1_shape"
+                    android:layout_marginStart="-1dp"
+                    android:layout_marginTop="-1dp"
+                    android:layout_width="312dp"
+                    android:layout_height="41dp" />
+
+
+                <RelativeLayout android:id="@+id/frame_55"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginStart="106dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/_bg__frame_55_ek1"
+                        android:background="@drawable/_bg__frame_55_ek1_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="100dp"
+                        android:layout_height="27dp" />
+
+
+                    <RelativeLayout android:id="@+id/_32"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <View   android:id="@+id/_bg___32_ek1"
+                            android:background="@drawable/_bg___32_ek1_shape"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="25dp"
+                            android:layout_height="27dp" />
+
+                        <ImageView android:id="@+id/vector"
+                            android:src="@drawable/vector"
+                            android:contentDescription="vector"
+                            android:layout_marginStart="12.68dp"
+                            android:layout_marginTop="11.16dp"
+                            android:layout_width="12.13dp"
+                            android:layout_height="12.51dp" />
+
+                        <ImageView android:id="@+id/vector_ek1"
+                            android:src="@drawable/vector_ek1"
+                            android:contentDescription="vector_ek1"
+                            android:layout_marginStart="1.4dp"
+                            android:layout_marginTop="16.12dp"
+                            android:layout_width="19.65dp"
+                            android:layout_height="10.78dp" />
+
+                        <ImageView android:id="@+id/vector_ek2"
+                            android:src="@drawable/vector_ek2"
+                            android:contentDescription="vector_ek2"
+                            android:layout_marginStart="0.06dp"
+                            android:layout_marginTop="7.58dp"
+                            android:layout_width="5.54dp"
+                            android:layout_height="11.97dp" />
+
+                        <ImageView android:id="@+id/vector_ek3"
+                            android:src="@drawable/vector_ek3"
+                            android:contentDescription="vector_ek3"
+                            android:layout_marginStart="1.4dp"
+                            android:layout_marginTop="0.24dp"
+                            android:layout_width="19.73dp"
+                            android:layout_height="10.78dp" />
+
+                    </RelativeLayout>
+
+                    <TextView android:id="@+id/google"
+                        android:textSize="20sp"
+                        android:textColor="@color/_bg__group_65_ek1_color"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_width="82dp"
+                        android:layout_height="30dp"
+                        android:text="@string/google_string"
+                        />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout android:id="@+id/frame_56"
+                android:layout_marginTop="56dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View   android:id="@+id/_bg__frame_56_ek1"
+                    android:background="@drawable/_bg__frame_56_ek1_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="312dp"
+                    android:layout_height="15dp" />
+
+                <ImageView android:id="@+id/line_2"
+                    android:src="@drawable/line_2"
+                    android:contentDescription="line_2"
+                    android:layout_marginStart="-1dp"
+                    android:layout_marginTop="6.5dp"
+                    android:layout_width="103dp"
+                    android:layout_height="1dp" />
+
+                <TextView android:id="@+id/atau_login_dengan"
+                    android:textSize="12sp"
+                    android:textColor="@color/_bg__group_65_ek1_color"
+                    android:layout_marginLeft="107dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="110.2dp"
+                    android:layout_height="18.2dp"
+                    android:text="@string/atau_login_dengan_string"
+                    />
+
+                <ImageView android:id="@+id/line_1"
+                    android:src="@drawable/line_1"
+                    android:contentDescription="line_1"
+                    android:layout_marginStart="208dp"
+                    android:layout_marginTop="6.5dp"
+                    android:layout_width="103dp"
+                    android:layout_height="1dp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
