@@ -198,13 +198,13 @@
                 android:layout_marginTop="15dp">
 
                 <View
-                    android:background="@drawable/rectangle_5_shape"
+                    android:background="@drawable/_bg__button_masuk_ek1_shape"
                     android:layout_width="312dp"
                     android:layout_height="41dp" />
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="100dp"
+                    android:layout_height="27dp"
                     android:layout_centerInParent="true">
 
                     <TextView
@@ -214,16 +214,16 @@
                         android:text="Google"
                         android:fontFamily="@font/fredoka_regular"
                         android:textSize="20sp"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:layout_toEndOf="@id/icon_google"
                         android:layout_marginStart="7dp"
+                        android:layout_centerVertical="true"
                         />
 
                     <RelativeLayout
                         android:id="@+id/icon_google"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
                         >
 
                         <ImageView
