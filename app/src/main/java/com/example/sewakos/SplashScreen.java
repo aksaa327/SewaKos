@@ -10,6 +10,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.sewakos.Autentication.LogIn;
+
 public class SplashScreen extends AppCompatActivity {
 
     @Override
@@ -27,7 +29,7 @@ public class SplashScreen extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), LogIn.class));
                 finish();
             }
         }, 3000L);

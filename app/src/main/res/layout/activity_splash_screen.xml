@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/_bg__splash_screen_color"
+    android:background="@color/color_1"
     tools:context=".SplashScreen">
 
     <RelativeLayout
@@ -32,7 +32,7 @@
             android:layout_marginTop="30dp"
             android:text="SEWAKOS"
             android:textSize="33.5sp"
-            android:textColor="@color/_bg__splashscreen_ek1_color"
+            android:textColor="@color/black"
             android:fontFamily="@font/archivo_black" />
 
         <TextView

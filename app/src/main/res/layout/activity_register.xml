@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_1"
+    tools:context=".Autentication.Register">
+
+    <RelativeLayout android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout android:id="@+id/top"
+            android:layout_marginTop="118dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView android:id="@+id/logo"
+                android:src="@drawable/logo"
+                android:contentDescription="logo"
+                android:layout_marginTop="0dp"
+                android:layout_width="100dp"
+                android:layout_height="128.68dp" />
+
+            <TextView android:id="@+id/text_daftar_akun"
+                android:textStyle="bold"
+                android:textSize="32sp"
+                android:textColor="@color/black"
+                android:layout_below="@+id/logo"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daftar Akun"
+                android:fontFamily="@font/fredoka_bold"
+                android:layout_centerHorizontal="true"
+                />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout android:id="@+id/middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/top"
+            android:layout_marginTop="41dp"
+            android:layout_centerHorizontal="true"
+            >
+
+            <EditText
+                android:id="@+id/input_username"
+                android:layout_width="312dp"
+                android:layout_height="50dp"
+                android:background="@drawable/rectangle_3_shape"
+                android:hint="Username"
+                android:inputType="text"
+                android:fontFamily="@font/fredoka_regular"
+                />
+
+            <EditText
+                android:id="@+id/input_Email"
+                android:layout_width="312dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/input_username"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rectangle_3_shape"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:fontFamily="@font/fredoka_regular"
+                />
+
+            <EditText
+                android:id="@+id/input_Password"
+                android:layout_width="312dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/input_Email"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rectangle_3_shape"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:fontFamily="@font/fredoka_regular"
+                />
+
+            <EditText
+                android:id="@+id/input_Repassword"
+                android:layout_width="312dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/input_Password"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rectangle_3_shape"
+                android:hint="Re-Password"
+                android:inputType="textPassword"
+                android:fontFamily="@font/fredoka_regular"
+                />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout android:id="@+id/button_daftar"
+            android:layout_below="@+id/middle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <View
+                android:background="@drawable/rectangle_5_shape"
+                android:layout_width="312dp"
+                android:layout_height="41dp" />
+
+            <TextView android:id="@+id/text_daftar"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daftar"
+                android:fontFamily="@font/fredoka_semibold"
+                />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="100dp"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/text_sudah_punya_akun_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sudah punya akun? "
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:fontFamily="@font/fredoka_medium"/>
+
+            <TextView
+                android:id="@+id/log_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/text_sudah_punya_akun_"
+                android:text="Login"
+                android:textColor="@color/color_4"
+                android:textSize="12sp"
+                android:fontFamily="@font/fredoka_medium"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

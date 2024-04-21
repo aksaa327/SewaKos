@@ -12,7 +12,10 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
 
-    <color name="_bg__splash_screen_color">#F1F1F2</color>
-    <color name="_bg__splashscreen_ek1_color">#000000</color>
     <color name="mudahnya_mencari_kos_color">#BCBABE</color>
+    <color name="color_1">#F1F1F2</color>
+    <color name="color_2">#BCBABE</color>
+    <color name="color_3">#A1D6E2</color>
+    <color name="color_4">#1995AD</color>
+
 </resources>
