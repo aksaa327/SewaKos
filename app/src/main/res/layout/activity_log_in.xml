@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -44,52 +44,67 @@
         </RelativeLayout>
 
 
-        <RelativeLayout android:id="@+id/group_63"
-            android:layout_marginTop="41dp"
+        <RelativeLayout
+            android:id="@+id/group_63"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@+id/group_65"
-            >
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="41dp">
 
-            <EditText
-                android:id="@+id/password_input"
-                android:layout_width="312dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="60dp"
-                android:alpha="0.40000000596046"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@id/password_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/email_group"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/rectangle_3_shape"
-                android:fontFamily="@font/fredoka_regular"
                 android:hint="Password"
-                android:inputType="textPassword"
-                android:textColorHint="@color/black" />
-
-            <EditText
-                android:id="@+id/email_input"
-                android:alpha="0.40000000596046"
-                android:layout_marginTop="0dp"
-                android:layout_marginStart="0dp"
-                android:layout_width="312dp"
-                android:layout_height="50dp"
-                android:hint="Email"
                 android:fontFamily="@font/fredoka_regular"
-                android:textColorHint="@color/black"
-                android:inputType="textEmailAddress"
+                app:passwordToggleDrawable="@drawable/password_toggle"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/black"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtPassword"
+                    android:layout_width="312dp"
+                    android:layout_height="50dp"
+                    android:ems="10"
+                    android:background="@drawable/rectangle_3_shape"
+                    android:fontFamily="@font/fredoka_regular"
+                    android:inputType="textPassword"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Email"
                 android:background="@drawable/rectangle_3_shape"
-                />
+                android:fontFamily="@font/fredoka_regular">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="312dp"
+                    android:layout_height="50dp"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/rectangle_3_shape"
+                    android:fontFamily="@font/fredoka_regular"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
 
             <TextView
                 android:id="@+id/lupa_kata_sandi"
-                android:textSize="12sp"
-                android:textColor="#1195AD"
-                android:layout_marginLeft="218dp"
-                android:layout_marginTop="120dp"
                 android:layout_width="wrap_content"
                 android:layout_height="18.2dp"
+                android:layout_below="@+id/password_group"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/fredoka_medium"
                 android:text="@string/lupa_kata_sandi__string"
-                />
+                android:textColor="#1195AD"
+                android:textSize="12sp" />
 
         </RelativeLayout>
 
@@ -273,4 +288,4 @@
 
     </RelativeLayout>
 
-</RelativeLayout>
+</LinearLayout>
