@@ -53,6 +53,23 @@
             android:layout_marginTop="41dp">
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:background="@drawable/rectangle_3_shape"
+                android:fontFamily="@font/fredoka_regular">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="312dp"
+                    android:layout_height="50dp"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/rectangle_3_shape"
+                    android:fontFamily="@font/fredoka_regular"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@id/password_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,11 +80,10 @@
                 android:fontFamily="@font/fredoka_regular"
                 app:passwordToggleDrawable="@drawable/password_toggle"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/black"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edtPassword"
+                    android:id="@+id/etPassword"
                     android:layout_width="312dp"
                     android:layout_height="50dp"
                     android:ems="10"
@@ -76,22 +92,6 @@
                     android:inputType="textPassword"
                     />
 
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/email_group"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Email"
-                android:background="@drawable/rectangle_3_shape"
-                android:fontFamily="@font/fredoka_regular">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="312dp"
-                    android:layout_height="50dp"
-                    android:inputType="textEmailAddress"
-                    android:background="@drawable/rectangle_3_shape"
-                    android:fontFamily="@font/fredoka_regular"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 
