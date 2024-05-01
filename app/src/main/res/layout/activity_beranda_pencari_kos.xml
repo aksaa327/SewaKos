@@ -5,6 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PencariKos.Beranda">
+    tools:context=".PemilikKos.Beranda_pencariKos">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

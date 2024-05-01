@@ -3,8 +3,6 @@ package com.example.sewakos.Autentication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,13 +14,19 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.sewakos.PencariKos.Beranda;
+import com.example.sewakos.PemilikKos.Beranda_pencariKos;
+import com.example.sewakos.PencariKos.Beranda_pemilikKos;
 import com.example.sewakos.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LogIn extends AppCompatActivity {
 
@@ -32,6 +36,7 @@ public class LogIn extends AppCompatActivity {
     private RelativeLayout button_masuk;
 
     private FirebaseAuth auth;
+    private FirebaseDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,9 +68,38 @@ public class LogIn extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             if (auth.getCurrentUser().isEmailVerified()) {
+                                final String userId = auth.getCurrentUser().getUid();
+                                DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("users");
+                                userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        if (snapshot.exists()) {
+                                            for (DataSnapshot userSnapshot : snapshot.getChildren()) {
+                                                String role = userSnapshot.child("role").getValue(String.class); // Perubahan disini, menggunakan userSnapshot
+                                                if (role != null) {
+                                                    if (role.equals("Pemilik Kos")) {
+                                                        startActivity(new Intent(getApplicationContext(), Beranda_pemilikKos.class));
+                                                        return;
+                                                    } else if (role.equals("Pencari Kos")) {
+                                                        startActivity(new Intent(getApplicationContext(), Beranda_pencariKos.class));
+                                                        return;
+                                                    }
+                                                }
+                                            }
+                                            Toast.makeText(getApplicationContext(), "Role tidak ditemukan", Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            Toast.makeText(getApplicationContext(), "Data pengguna tidak ditemukan", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+                                        Toast.makeText(getApplicationContext(), "Gagal membaca data pengguna", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+
                                 Toast.makeText(getApplicationContext(), "Login Berhasil", Toast.LENGTH_SHORT).show();
 
-                                startActivity(new Intent(getApplicationContext(), Beranda.class));
                             } else {
                                 etEmail.setError("Verifikasi Email Anda Terlebih Dahulu");
                             }
