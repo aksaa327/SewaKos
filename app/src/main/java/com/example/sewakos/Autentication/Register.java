@@ -131,7 +131,6 @@ public class Register extends AppCompatActivity {
                                                     @Override
                                                     public void onComplete(@NonNull Task<Void> task) {
                                                         if (task.isSuccessful()) {
-                                                            Toast.makeText(Register.this, "Daftar berhasil", Toast.LENGTH_SHORT).show();
                                                             database = FirebaseDatabase.getInstance().getReference("users");
                                                             database.child(username).child("email").setValue(email);
                                                             database.child(username).child("username").setValue(username);
