@@ -25,6 +25,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -131,9 +132,13 @@ public class Register extends AppCompatActivity {
                                                     @Override
                                                     public void onComplete(@NonNull Task<Void> task) {
                                                         if (task.isSuccessful()) {
+                                                            Toast.makeText(Register.this, "Daftar Berhasil", Toast.LENGTH_SHORT).show();
+                                                            FirebaseUser firebaseUser = auth.getCurrentUser();
+
+
                                                             database = FirebaseDatabase.getInstance().getReference("users");
-                                                            database.child(username).child("email").setValue(email);
-                                                            database.child(username).child("username").setValue(username);
+                                                            database.child(firebaseUser.getUid()).child("email").setValue(email);
+                                                            database.child(firebaseUser.getUid()).child("username").setValue(username);
 
                                                             Log.d("RoleAndRadioButton", "Selected RadioButton ID: " + selectedRadioButtonId);
 
@@ -147,7 +152,7 @@ public class Register extends AppCompatActivity {
                                                             Log.d("RoleAndRadioButton", "Role value: " + role[0]);
 
 
-                                                            database.child(username).child("role").setValue(role[0]);
+                                                            database.child(firebaseUser.getUid()).child("role").setValue(role[0]);
 
                                                             startActivity(new Intent(Register.this, LogIn.class));
                                                         } else {

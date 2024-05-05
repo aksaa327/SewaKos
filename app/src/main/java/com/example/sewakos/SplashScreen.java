@@ -47,24 +47,30 @@ public class SplashScreen extends AppCompatActivity {
                 FirebaseUser currentUser = auth.getCurrentUser();
                 if (currentUser != null) {
                     if (currentUser.isEmailVerified()) {
+                        final String userId = auth.getCurrentUser().getUid();
                         DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("users");
                         userRef.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 if (snapshot.exists()) {
-                                    for (DataSnapshot userSnapshot : snapshot.getChildren()) {
-                                        String role = userSnapshot.child("role").getValue(String.class); // Perubahan disini, menggunakan userSnapshot
+                                    DataSnapshot userSnapshot = snapshot.child(userId); // Ambil child dengan kunci UID pengguna saat ini
+                                    if (userSnapshot.exists()) { // Pastikan child dengan UID pengguna saat ini ada
+                                        String role = userSnapshot.child("role").getValue(String.class);
                                         if (role != null) {
                                             if (role.equals("Pemilik Kos")) {
                                                 startActivity(new Intent(getApplicationContext(), BottomNavbarPemilikKos.class));
+                                                finish(); // Tutup activity splash screen agar tidak kembali saat tombol kembali ditekan
                                                 return;
-                                            } else if (role.equals("Pencari Kos")) {
+                                            } else if (role.equals("Pencari kos")) {
                                                 startActivity(new Intent(getApplicationContext(), BottomNavbarPencariKos.class));
+                                                finish(); // Tutup activity splash screen agar tidak kembali saat tombol kembali ditekan
                                                 return;
                                             }
                                         }
+                                        Toast.makeText(getApplicationContext(), "Peran tidak valid", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Data pengguna tidak ditemukan", Toast.LENGTH_SHORT).show();
                                     }
-                                    Toast.makeText(getApplicationContext(), "Role tidak ditemukan", Toast.LENGTH_SHORT).show();
                                 } else {
                                     Toast.makeText(getApplicationContext(), "Data pengguna tidak ditemukan", Toast.LENGTH_SHORT).show();
                                 }
@@ -75,6 +81,7 @@ public class SplashScreen extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "Gagal membaca data pengguna", Toast.LENGTH_SHORT).show();
                             }
                         });
+
                     } else {
                         startActivity(new Intent(getApplicationContext(), LogIn.class));
                     }

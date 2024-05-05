@@ -76,12 +76,12 @@ public class LogIn extends AppCompatActivity {
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                                         if (snapshot.exists()) {
                                             for (DataSnapshot userSnapshot : snapshot.getChildren()) {
-                                                String role = userSnapshot.child("role").getValue(String.class); // Perubahan disini, menggunakan userSnapshot
-                                                if (role != null) {
+                                                String role = userSnapshot.child("role").getValue(String.class);
+                                                if (role != null && userSnapshot.getKey().equals(userId)) {
                                                     if (role.equals("Pemilik Kos")) {
                                                         startActivity(new Intent(getApplicationContext(), BottomNavbarPemilikKos.class));
                                                         return;
-                                                    } else if (role.equals("Pencari Kos")) {
+                                                    } else if (role.equals("Pencari kos")) {
                                                         startActivity(new Intent(getApplicationContext(), BottomNavbarPencariKos.class));
                                                         return;
                                                     }
